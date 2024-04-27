@@ -239,6 +239,7 @@ public class GameLand implements Runnable, KeyListener {
         bufferStrategy.show();
     }
 
+
     public void moveThings() {
         //call the move() method code from your object class
         ball.bouncingMove();
