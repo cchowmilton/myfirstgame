@@ -4,23 +4,21 @@ public class Ball {
 
         //variable declaration
 
-        public int xpos; //the x position
-        public int ypos; //the y position
-        public int dx; //the speed of the hero in the x direction
-        public int dy; //the speed of the hero in the y direction
-        public int width;
-        public int height;
-        public boolean isAlive;//a boolean to denote if the hero is alive or not
-        public Rectangle rec;
-        //movement booleans
-        public boolean leftPressed;
-        public boolean rightPressed;
-        public boolean upPressed;
-        public boolean downPressed;
+    public int xpos; // The x position
+    public int ypos; // The y position
+    public int dx; // The speed of the ball in the x direction
+    public int dy; // The speed of the ball in the y direction
+    public int width;
+    public int height;
+    public boolean isAlive;
+    public Rectangle rec;
+    private int initialXpos;
+    private int initialYpos;
 
 
         //constructor method
         public Ball(int pXpos, int pYpos, int pDx, int pDy, int pWidth, int pHeight) {
+            // Initialize the variables
             xpos = pXpos;
             ypos = pYpos;
             dx = pDx;
@@ -28,11 +26,22 @@ public class Ball {
             width = pWidth;
             height = pHeight;
             isAlive = true;
-            rec=new Rectangle(xpos,ypos,width,height);
-
+            rec = new Rectangle(xpos, ypos, width, height);
+            // Set initial positions
+            initialXpos = pXpos;
+            initialYpos = pYpos;
         }
 
-        public void printInfo() {
+    // Reset method
+    public void reset() {
+        // Reset the ball's position to its initial position
+        xpos = initialXpos;
+        ypos = initialYpos;
+        // Reset any other properties of the ball as needed
+    }
+
+
+    public void printInfo() {
             System.out.println("X Position: " + xpos);
             System.out.println("Y Position: " + ypos);
             //OR
